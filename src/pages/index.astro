@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Counter from './counter.astro'
+---
+
+<Layout title='Welcome to Astro.'>
+    <main>
+        <h1 class='text-2xl'>Counter</h1>
+        <button
+            hx-trigger='click'
+            hx-post='/counter'
+            hx-target='next div'
+            hx-swap='innerHTML'
+            class='btn btn-primary'>+</button
+        >
+        <div>
+            <Counter />
+        </div>
+        <a href='/about' hx-boost='true'>/about</a>
+    </main>
+</Layout>

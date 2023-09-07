@@ -1,0 +1,15 @@
+---
+let cookie = Astro.cookies.get('counter')
+
+let counter = 0
+if (cookie) {
+    counter = cookie.number()
+}
+
+if (Astro.request.method === 'POST') {
+    counter++
+    Astro.cookies.set('counter', counter.toString())
+}
+---
+
+{counter}
